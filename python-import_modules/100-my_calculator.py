@@ -3,24 +3,27 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
+    # Arqument sayını yoxlayırıq (skriptin özü + 3 arqument = 4)
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
     a = int(sys.argv[1])
-    operator = sys.argv[2]
+    op = sys.argv[2]
     b = int(sys.argv[3])
 
-    ops = {
-        "+": add,
-        "-": sub,
-        "*": mul,
-        "/": div
-    }
-
-    if operator not in ops:
+    # Operatorları və onlara uyğun funksiyaları təyin edirik
+    if op == '+':
+        res = add(a, b)
+    elif op == '-':
+        res = sub(a, b)
+    elif op == '*':
+        res = mul(a, b)
+    elif op == '/':
+        res = div(a, b)
+    else:
+        # Mesajda boşluqlara diqqət: "+, -, * and /"
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    result = ops[operator](a, b)
-    print("{} {} {} = {}".format(a, operator, b, result))
+    print("{} {} {} = {}".format(a, op, b, res))
