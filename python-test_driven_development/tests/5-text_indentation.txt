@@ -1,35 +1,18 @@
-===============================
-How to use 5-text_indentation.py
-===============================
-
-Import the function:
-    >>> text_indentation = __import__('5-text_indentation').text_indentation
-
-Normal usage:
-    >>> text_indentation("Hello. How are you? Fine: Bye")
-    Hello.
-    <BLANKLINE>
-    How are you?
-    <BLANKLINE>
-    Fine:
-    <BLANKLINE>
-    Bye
-
-Error - not a string:
-    >>> text_indentation(123)
-    Traceback (most recent call last):
-        ...
-    TypeError: text must be a string
-
-Error - missing argument:
-    >>> text_indentation()
-    Traceback (most recent call last):
-        ...
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-Leading and trailing spaces check:
-    >>> text_indentation("  Wait.   What? ")
-    Wait.
-    <BLANKLINE>
-    What?
-    <BLANKLINE>
+>>> text_indentation = __import__('5-say_my_name_3').text_indentation
+>>> text_indentation("  Wait.   What? ")
+Wait.
+<BLANKLINE>
+What?
+<BLANKLINE>
+>>> text_indentation("Hello. How are you? Fine: Bye")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Fine:
+<BLANKLINE>
+Bye
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
