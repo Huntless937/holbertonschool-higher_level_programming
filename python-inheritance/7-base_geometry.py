@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for BaseGeometry class."""
+"""Defines BaseGeometry class."""
 
 
 class BaseGeometry:
