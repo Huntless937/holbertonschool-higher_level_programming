@@ -3,12 +3,12 @@
 
 
 class Square:
-    """Class Square that defines a square."""
+    """A class that represents a square."""
 
     def __init__(self, size):
-        """Initialize the square with a private size attribute.
-        
+        """Initialize a new Square instance.
+
         Args:
-            size: The size of the square.
+            size (int): The size of the square.
         """
         self.__size = size
