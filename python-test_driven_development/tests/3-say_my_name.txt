@@ -8,19 +8,24 @@ Import the function:
 Normal usage:
     >>> say_my_name("John", "Smith")
     My name is John Smith
-    >>> say_my_name("Walter", "White")
-    My name is Walter White
 
 Only first name (note the trailing space):
     >>> say_my_name("Bob")
     My name is Bob 
 
-Error handling:
+Error - missing first_name:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Error - first_name is not a string:
     >>> say_my_name(12, "White")
     Traceback (most recent call last):
         ...
     TypeError: first_name must be a string
 
+Error - last_name is not a string:
     >>> say_my_name("Walter", 12)
     Traceback (most recent call last):
         ...
