@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """Divides all elements of a matrix."""
+    """Divides all elements of a matrix by div."""
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list) or not matrix or not matrix[0]:
         raise TypeError(msg)
@@ -13,8 +13,9 @@ def matrix_divided(matrix, div):
     for row in matrix:
         if len(row) != row_len:
             raise TypeError("Each row of the matrix must have the same size")
-        if not all(isinstance(i, (int, float)) for i in row):
-            raise TypeError(msg)
+        for i in row:
+            if not isinstance(i, (int, float)):
+                raise TypeError(msg)
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
