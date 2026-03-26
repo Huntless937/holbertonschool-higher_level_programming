@@ -27,5 +27,7 @@ TypeError: div must be a number
 >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
 [[0.0, 0.0], [0.0, 0.0]]
 
->>> matrix_divided([[1, 2], [3, 4]], float('nan'))
-[[nan, nan], [nan, nan]]
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
