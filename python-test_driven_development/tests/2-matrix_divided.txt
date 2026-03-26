@@ -7,7 +7,7 @@
 >>> matrix_divided([[1, 2], [3, 4]], 0)
 Traceback (most recent call last):
     ...
-ZeroDivisionError: division by 0
+ZeroDivisionError: division by zero
 
 >>> matrix_divided([[1, "2"], [3, 4]], 2)
 Traceback (most recent call last):
