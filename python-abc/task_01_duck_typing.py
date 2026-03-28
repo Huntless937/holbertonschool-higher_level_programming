@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-This module defines the Shape abstract class and its subclasses,
-Circle and Rectangle, along with a duck typing function shape_info.
+Module for Shape, Circle, Rectangle and shape_info.
+This module demonstrates Abstract Base Classes and Duck Typing.
 """
-from abc import ABC, abstractmethod
 import math
+from abc import ABC, abstractmethod
 
 
 class Shape(ABC):
@@ -30,7 +30,7 @@ class Circle(Shape):
 
     def area(self):
         """Returns the area of the circle."""
-        return (self.radius ** 2) * math.pi
+        return math.pi * (self.radius ** 2)
 
     def perimeter(self):
         """Returns the perimeter of the circle."""
