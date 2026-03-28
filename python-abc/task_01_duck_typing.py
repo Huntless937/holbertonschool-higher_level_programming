@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""Module for abstract classes and duck typing."""
 from abc import ABC, abstractmethod
-from math import pi
+import math
 
 
 class Shape(ABC):
@@ -8,39 +9,49 @@ class Shape(ABC):
 
     @abstractmethod
     def area(self):
-        """Return area."""
-        raise NotImplementedError
+        """Calculates the area of the shape."""
+        pass
 
     @abstractmethod
     def perimeter(self):
-        """Return perimeter."""
-        raise NotImplementedError
+        """Calculates the perimeter of the shape."""
+        pass
 
 
 class Circle(Shape):
+    """Circle class inheriting from Shape."""
+
     def __init__(self, radius):
+        """Initialize circle with radius."""
         self.radius = radius
 
     def area(self):
-        return pi * self.radius**2
+        """Return the area of the circle."""
+        return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        return 2 * pi * self.radius
+        """Return the perimeter of the circle."""
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
+    """Rectangle class inheriting from Shape."""
+
     def __init__(self, width, height):
+        """Initialize rectangle with width and height."""
         self.width = width
         self.height = height
 
     def area(self):
+        """Return the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
+        """Return the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """Print shape info using duck typing."""
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    """Prints area and perimeter using duck typing."""
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
