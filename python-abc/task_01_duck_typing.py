@@ -1,54 +1,46 @@
 #!/usr/bin/env python3
-"""Module for task 01."""
-import math
 from abc import ABC, abstractmethod
+from math import pi
 
 
 class Shape(ABC):
-    """Abstract class Shape."""
+    """Abstract base class for shapes."""
+
     @abstractmethod
     def area(self):
-        """Area method."""
-        pass
+        """Return area."""
+        raise NotImplementedError
 
     @abstractmethod
     def perimeter(self):
-        """Perimeter method."""
-        pass
+        """Return perimeter."""
+        raise NotImplementedError
 
 
 class Circle(Shape):
-    """Circle class."""
     def __init__(self, radius):
-        """Init Circle."""
         self.radius = radius
 
     def area(self):
-        """Circle area."""
-        return math.pi * (self.radius ** 2)
+        return pi * self.radius**2
 
     def perimeter(self):
-        """Circle perimeter."""
-        return 2 * math.pi * self.radius
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
-    """Rectangle class."""
     def __init__(self, width, height):
-        """Init Rectangle."""
         self.width = width
         self.height = height
 
     def area(self):
-        """Rectangle area."""
         return self.width * self.height
 
     def perimeter(self):
-        """Rectangle perimeter."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """Shape info function."""
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    """Print shape info using duck typing."""
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
