@@ -1,66 +1,54 @@
 #!/usr/bin/env python3
-"""
-Module for Shape, Circle, Rectangle and shape_info function.
-This module demonstrates Abstract Base Classes and Duck Typing.
-"""
+"""Module for task 01."""
 import math
 from abc import ABC, abstractmethod
 
 
 class Shape(ABC):
-    """Abstract class for geometric shapes."""
-
+    """Abstract class Shape."""
     @abstractmethod
     def area(self):
-        """Calculates the area of the shape."""
+        """Area method."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Calculates the perimeter of the shape."""
+        """Perimeter method."""
         pass
 
 
 class Circle(Shape):
-    """Circle class that inherits from Shape."""
-
+    """Circle class."""
     def __init__(self, radius):
-        """Initializes Circle with radius."""
+        """Init Circle."""
         self.radius = radius
 
     def area(self):
-        """Returns the area of the circle."""
+        """Circle area."""
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        """Returns the perimeter of the circle."""
+        """Circle perimeter."""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Rectangle class that inherits from Shape."""
-
+    """Rectangle class."""
     def __init__(self, width, height):
-        """Initializes Rectangle with width and height."""
+        """Init Rectangle."""
         self.width = width
         self.height = height
 
     def area(self):
-        """Returns the area of the rectangle."""
+        """Rectangle area."""
         return self.width * self.height
 
     def perimeter(self):
-        """Returns the perimeter of the rectangle."""
+        """Rectangle perimeter."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """
-    Prints the area and perimeter of a shape object using duck typing.
-    Handles potential AttributeError if methods are missing.
-    """
-    try:
-        print("Area: {}".format(shape.area()))
-        print("Perimeter: {}".format(shape.perimeter()))
-    except (AttributeError, Exception):
-        pass
+    """Shape info function."""
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
